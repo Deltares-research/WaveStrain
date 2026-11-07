@@ -1,0 +1,31 @@
+[project]
+name = "WaveStrain"
+version = "0.1.0"
+description = "Explore wave dynamics using fiber-optic sensing"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["h5py", "numpy", "scipy", "matplotlib", "python-dotenv", "tzdata"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64"]
+
+[tool.pixi.pypi-dependencies]
+wavestrain = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+view-events = "python view_events.py"
+waterfall-stream = "python waterfall_stream.py"
+
+[tool.pixi.dependencies]
+python = ">=3.11"
+numpy = ">=2.5.4,<3"
+scipy = ">=1.18.1,<2"
+matplotlib = ">=3.11.2,<4"
+python-dotenv = ">=1.2.4,<2"
+h5py = ">=3.16.0,<4"
+tzdata = "*"

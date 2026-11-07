@@ -1,0 +1,12 @@
+.pixi/
+.env
+__pycache__/
+*.py[cod]
+outputs/
+.vscode/
+*.h5
+*.hdf5
+*.hdf
+build/
+dist/
+*.egg-info/
